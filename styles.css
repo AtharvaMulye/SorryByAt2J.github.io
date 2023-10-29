@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   padding: 0;
@@ -11,6 +12,7 @@ body {
   justify-content: center;
   text-align: center;
   overflow: hidden;
+  overflow-y: auto;
 }
 
 .sorry-container {
@@ -171,4 +173,24 @@ body:before {
   background-size: 4px 4px;
   animation: vhs 8s infinite linear;
   mix-blend-mode: screen;
+}
+
+
+
+@media (max-width: 768px) {
+  .beautiful-text {
+    top: 4rem;
+    font-size: 1.5rem; 
+  }
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .transparent-button {
+    padding: 8px 16px; 
+    font-size: 0.9rem; 
+  }
 }
