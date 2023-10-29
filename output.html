@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="output-panel">
+        <p class="output-text"></p>
+    </div>
+
+    <script>
+        // Function to get query parameters from the URL
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Get the language and output from query parameters
+        const language = getQueryParam('language');
+        const output = decodeURIComponent(getQueryParam('output'));
+
+        // Display the output in the output panel
+        const outputText = document.querySelector('.output-text');
+        outputText.textContent = output;
+    </script>
+</body>
+</html>

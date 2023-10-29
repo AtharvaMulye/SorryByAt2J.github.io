@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(45deg, #8d2669, #561c72, #461334);
+  background-size: 300% 300%;
+  animation: gradient 20s infinite;
+  font-family: "Pacifico", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.sorry-container {
+  position: relative;
+  top: -2vmax;
+  z-index: 1;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.beautiful-text {
+  font-size: 1.8rem;
+  color: #fff;
+  animation: fadeIn 3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("C://Users//Atharv//Desktop//PRACTICE//JS//sorry//pexels-miguel-á-padriñán-255379.jpg")
+    center center/cover no-repeat;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .beautiful-text {
+    font-size: 2rem;
+  }
+}
+
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  justify-content: center;
+  text-align: center;
+}
+
+.transparent-button {
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 0.5rem;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.transparent-button:hover {
+  background-color: #fff;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+.output-panel {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #fff;
+  border-radius: 5px;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.output-text {
+  font-size: 1rem;
+  color: #fff;
+}
+
+#output {
+  font-weight: bold;
+  color: #fff;
+}
+
+.code-snippet {
+  animation-duration: 1s;
+  animation-name: explode;
+  animation-fill-mode: forwards;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+#video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  /* display: none; */
+}
+
+#heart-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  mix-blend-mode: screen;
+  opacity: 40%;
+}
+#heart-video::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 50%,
+    transparent 75%,
+    rgba(255, 255, 255, 0.1) 75%,
+    rgba(255, 255, 255, 0.1)
+  );
+  background-size: 4px 4px;
+  animation: vhs 8s infinite linear;
+  mix-blend-mode: screen;
+}
